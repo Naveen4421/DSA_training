@@ -19,12 +19,12 @@ void addstudent(struct students s[],int n){
 }
 void details(struct students s[],int n){
     for(int i=0;i<n;i++){
-        printf("%d student details=%d\n",i+1);
-        printf("enter the name of the student %d:\n",s[i].reg);
+        printf(" student details");
+        printf("reg number of student=%d\n",s[i].reg);
         
-        printf("enter the reg number of %d:\n",s[i].m1);
+        printf("marks of m1=%d:\n",s[i].m1);
         
-        printf("enter the marks of m1=%d:\n",s[i].m2);
+        printf("marks of m2=%d:\n",s[i].m2);
         printf("\n");
         
         
