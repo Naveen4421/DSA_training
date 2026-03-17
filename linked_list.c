@@ -14,6 +14,24 @@ struct node *createnode(int val) {
     return newNode;
 }
 
+struct node *sort(struct node *head) {
+    if (head == NULL) return NULL;
+
+    struct node *i, *j;
+    int temp;
+
+    for (i = head; i != NULL; i = i->next) {
+        for (j = i->next; j != NULL; j = j->next) {
+            if (i->data > j->data) {
+                temp = i->data;
+                i->data = j->data;
+                j->data = temp;
+            }
+        }
+    }
+    return head;
+}
+
 struct node *createstart(struct node *head, int val) {
     struct node *newNode = createnode(val);
     newNode->next = head;
@@ -159,6 +177,7 @@ int main() {
     head = createstart(head, 87);
     head = createstart(head, 88);
     head = createstart(head, 89);
+    head=sort(head);
     
     displaylist(head);
 
@@ -183,6 +202,7 @@ int main() {
     head = delete_before_element(head, 87);
     displaylist(head);
     head=delte_after_element(head,87);
+    head=sort(head);
     displaylist(head);
 
     return 0;
